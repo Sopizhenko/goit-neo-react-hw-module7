@@ -1,0 +1,22 @@
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  row-gap: 0.5em;
+  align-items: flex-start;
+}
+
+.contactInfoItem {
+  display: inline-flex;
+  align-items: center;
+}
+
+.contactIcon {
+  font-size: 1.5em;
+  margin-right: 0.5em;
+}
+
+.button {
+  cursor: pointer;
+  padding: 5px 10px;
+}
