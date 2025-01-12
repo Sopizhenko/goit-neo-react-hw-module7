@@ -1,8 +1,14 @@
 import React from "react";
 import css from "./Contact.module.css";
 import { MdPerson, MdPhone } from "react-icons/md";
+import { useDispatch } from "react-redux";
+import { deleteContact } from "../../redux/contactsSlice";
 
-const Contact = ({ contact, onDelete }) => {
+const Contact = ({ contact }) => {
+  const dispatch = useDispatch();
+
+  const handleDelete = () => dispatch(deleteContact(contact.id));
+
   return (
     <>
       <div className={css.contactInfo}>
@@ -15,7 +21,7 @@ const Contact = ({ contact, onDelete }) => {
           {contact.number}
         </span>
       </div>
-      <button onClick={() => onDelete(contact.id)} className={css.button}>
+      <button onClick={handleDelete} className={css.button}>
         Delete
       </button>
     </>
